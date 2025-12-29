@@ -37,22 +37,25 @@ const AllNotes = () => {
 
   // to get notes from backend
   const fetchNotes = async () => {
-    const token = sessionStorage.getItem("token");
+  const token = sessionStorage.getItem("token");
 
-    if (token) {
-      const reqHeader = {
-        Authorization: `Bearer ${token.replace(/"/g, "")}`
-      };
+  if (token) {
+    const reqHeader = {
+      Authorization: `Bearer ${token.replace(/"/g, "")}`
+    };
 
-      const result = await getAllNotesAPI(reqHeader);
-      if (result.status === 200) {
-        setNotes(result.data);
-      }
-      else {
-        setNotes([]);
-      }
+    const result = await getAllNotesAPI(reqHeader);
+
+    if (result.status === 200) {
+      const approvedNotes = result.data.filter(
+        note => note.status === "approved"
+      );
+      setNotes(approvedNotes);
+    } else {
+      setNotes([]);
     }
-  };
+  }
+};
 
   // filtering notes based on topic
   const filteredNotes = selectedTopic
