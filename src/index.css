@@ -1,0 +1,39 @@
+@import "tailwindcss";
+*{
+  font-family: "Quintessential", serif;
+  /* outline: auto; */
+}
+
+#heading{
+    font-family: "Newsreader", serif;
+
+}
+#homeSub{
+  font-family: "Truculenta", sans-serif;
+
+}
+.text{
+    font-family: "Poiret One", sans-serif;
+
+}
+.heading{
+    font-family: "Truculenta", sans-serif;
+
+}
+#authPage{
+  background-image: url('src/assets/qnBgnd.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  
+}
+#registerPage{
+  background-image: url('src/assets/qnMark.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.pageHead{
+    font-family: "Stardos Stencil", system-ui;
+
+}
